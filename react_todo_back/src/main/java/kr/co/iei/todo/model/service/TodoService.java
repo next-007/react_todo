@@ -23,4 +23,8 @@ public class TodoService {
 		int result = todoDao.insertTodo(todo);
 		return result;
 	}
+	public Todo selectOneTodo(Integer todoNo) {
+		Todo todo = todoDao.selectOneTodo(todoNo);
+		return todo;
+	}
 }

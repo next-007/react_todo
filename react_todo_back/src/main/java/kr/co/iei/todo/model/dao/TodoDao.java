@@ -13,4 +13,6 @@ public interface TodoDao {
 
 	int insertTodo(Todo todo);
 
+	Todo selectOneTodo(Integer todoNo);
+
 }

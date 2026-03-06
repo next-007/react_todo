@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,12 @@ public class TodoController {
 	public ResponseEntity<?> insertTodo(@RequestBody Todo todo){
 		int result = todoService.insertTodo(todo);
 		return ResponseEntity.ok(result);
+	}
+	
+	@GetMapping(value="/{todoNo}")
+	public ResponseEntity<?> selectOneTodo(@PathVariable Integer todoNo){
+		Todo todo = todoService.selectOneTodo(todoNo);
+		return ResponseEntity.ok(todo);
 	}
 }
 

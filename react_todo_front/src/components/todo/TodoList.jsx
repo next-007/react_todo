@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./TodoList.module.css";
 const TodoList = ({ todoList }) => {
   return (
@@ -10,8 +11,14 @@ const TodoList = ({ todoList }) => {
 };
 
 const TodoItem = ({ todo }) => {
+  const navigate = useNavigate();
   return (
-    <ul className={styles.item}>
+    <ul
+      className={styles.item}
+      onClick={() => {
+        navigate(`/detail/${todo.todoNo}`);
+      }}
+    >
       <li className={styles.content}>
         <span className={styles.todo_content}>{todo.todoContent}</span>
         <span className={styles.todo_writer}>{todo.todoWriter}</span>
