@@ -12,6 +12,7 @@ const TodoList = ({ todoList }) => {
 
 const TodoItem = ({ todo }) => {
   const navigate = useNavigate();
+  const data = 1;
   return (
     <ul
       className={styles.item}
